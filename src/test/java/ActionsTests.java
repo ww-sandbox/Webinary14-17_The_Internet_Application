@@ -30,14 +30,17 @@ public class ActionsTests extends BaseTest{
         - odnajdź obrazek profilu drugiego użytkownika
         - najedź na obrazek
         - zlokalizuj link 'View profile' i kliknij w niego
-        Stwórz wait i poczekaj aż adres strony będzie zawierał "/users/2"
+        Znajdź element 'h1' z tekstem 'Not Found'
+        Sprawdź czy aktualny url zawiera '/users/2'
          */
         Actions openUserProfileAction = new Actions(driver);
         WebElement secondUserAvatar = driver.findElement(By.cssSelector(".figure:nth-of-type(2)"));
         openUserProfileAction.moveToElement(secondUserAvatar).pause(1000).moveToElement(secondUserAvatar.findElement(By.tagName("a"))).click().build().perform();
 
-        WebDriverWait wait = new WebDriverWait(driver, 3);
-        wait.until(ExpectedConditions.urlContains("/users/2"));
+        driver.findElement(By.xpath("//h1[text()='Not Found']"));
+        String currentUrl = driver.getCurrentUrl();
+
+        Assert.assertTrue(currentUrl.contains("/users/2"));
     }
 
 }
