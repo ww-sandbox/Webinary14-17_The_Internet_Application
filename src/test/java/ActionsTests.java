@@ -33,14 +33,6 @@ public class ActionsTests extends BaseTest{
         Znajdź element 'h1' z tekstem 'Not Found'
         Sprawdź czy aktualny url zawiera '/users/2'
          */
-        Actions openUserProfileAction = new Actions(driver);
-        WebElement secondUserAvatar = driver.findElement(By.cssSelector(".figure:nth-of-type(2)"));
-        openUserProfileAction.moveToElement(secondUserAvatar).pause(1000).moveToElement(secondUserAvatar.findElement(By.tagName("a"))).click().build().perform();
-
-        driver.findElement(By.xpath("//h1[text()='Not Found']"));
-        String currentUrl = driver.getCurrentUrl();
-
-        Assert.assertTrue(currentUrl.contains("/users/2"));
     }
 
 }
