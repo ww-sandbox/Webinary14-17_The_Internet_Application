@@ -15,6 +15,7 @@
         <testng.version>7.3.0</testng.version>
         <selenium.version>3.141.59</selenium.version>
         <surefire.verion>2.22.2</surefire.verion>
+        <commonsio.version>2.8.0</commonsio.version>
     </properties>
 
     <dependencies>
@@ -32,6 +33,11 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commonsio.version}</version>
         </dependency>
     </dependencies>
 
