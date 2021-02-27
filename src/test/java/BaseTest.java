@@ -19,5 +19,6 @@ public class BaseTest {
     @AfterClass
     public void tearDown(){
         driver.quit();
+        //Dodaj kod zapisujący screenshot w przypadku 'faila' testu
     }
 }

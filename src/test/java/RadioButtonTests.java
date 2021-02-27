@@ -24,10 +24,5 @@ public class RadioButtonTests extends BaseTest{
     public void selectFemaleAndAssertOthersAreNotSelected() throws IOException {
         //Zaznacz radio button 'Female'
         //Wykorzystując Assert sprawdź, że zaznaczony jest tylko jeden radio button
-        WebElement femaleRadioButton = driver.findElement(By.cssSelector("input[type='radio'][value='female']"));
-        femaleRadioButton.click();
-        List<WebElement> selectedRadioButtons = driver.findElements(By.cssSelector("input[type='radio']:checked"));
-
-        Assert.assertEquals(selectedRadioButtons.size(), 1);
     }
 }
