@@ -16,6 +16,10 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
+    //Dodaj metodę 'methodTearDown' z adnotacją '@AfterMethod' pobierającą jako argument 'ITestResult result'
+    //Zapisującą zrzut ekranu w przypadku testu zakończonego failem
+    
     @AfterClass
     public void tearDown(){
         driver.quit();
